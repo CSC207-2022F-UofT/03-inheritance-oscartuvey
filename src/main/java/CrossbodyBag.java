@@ -40,10 +40,15 @@ public class CrossbodyBag extends Bag {
     private int capacity;
 
     private String[] contents;
+
     private int numberOfStraps;
 
     public CrossbodyBag(String color, int capacity, int numberOfStraps){
-        super(color, capacity);
+        super(color, capacity); // The values still need to be initialised because Bag is an abstract class
+        this.color = color;
+        this.capacity = capacity;
+        this.numberOfContents = 0;
+        this.contents = new String[capacity];
         this.numberOfStraps = numberOfStraps;
     }
 
@@ -57,6 +62,8 @@ public class CrossbodyBag extends Bag {
 
     @Override
     public String toString() {
+        System.out.println( this.color + " Crossbody Bag with " + this.numberOfStraps + " straps ("
+                + this.numberOfContents + " / " + this.capacity + ")");
         return this.color + " Crossbody Bag with " + this.numberOfStraps + " straps ("
                 + this.numberOfContents + " / " + this.capacity + ")";
     }
